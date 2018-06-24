@@ -1,0 +1,47 @@
+Usuarios/Permisos
+-----------------------
+Cada usuario tiene un UserLevel, numero entero, siendo un numero mayor asociado a mayor nivel de permisos
+* Cada variable tiene un MinUserLevelToRead. Un usuario con menos nivel recive un valor double.NegativeInfinity si trata de leerla
+* Cada variable tiene un MinUserLevelToWrite. Un usuario con menos nivel no puede modificar el valor de la variable
+* Cada experimento tiene un MinUserLevelToStart. Un usuario con menos nivel no puede iniciarlo
+* Cada experimento tiene un MinUserLevelToStop. Un usuario con menos nivel no puede detenerlo
+* Cada experimento tiene un MinUserLevelToInteract. Un usuario con menos nivel no puede enumerar, leer, ni modificar las variables
+* El servidor tiene un MinUserLevelToStart. Un usuario con menos nivel no puede iniciarlo
+* El servidor tiene un MinUserLevelToStop. Un usuario con menos nivel no puede detenerlo
+* El servidor tiene un MinUserLevelToAdmin. Un usuario con menos nivel no puede crear/eliminar experimentos
+
+
+Server
+-------
+* El usuario puede adicionar/eliminar experimentos si el servidor esta detenido
+* Cada experimento puede ser activado/desactivado
+* El servidor provee todos los valores de las variables en un experimentos de manera asincronica
+* Cada experimento puede ser accedido por su nombre
+* El servidor puede arrancar/parar
+* El cliente puede mandar a cambiar el valor de las variables, esta acción manda el comando correspondiente al driver. Si el cambio fue satisfactorio, se refleja en la próxima lectura de la variable
+* El servidor devuelve NaN para las variables que no han sido leidas, o las que el driver no puede continuar accediendo
+El estado de iniciado o parado de los experimentos debe persistir mas alla de la persistencia del servidor
+* Cada variable se chequea en un tiempo de muestreo, multiplo de 250ms
+Cada variable tiene un delta que si cambia en ese delta no se considera que cambió
+
+
+Experimentos
+------------
+* Los experimentos contienen variables
+* Cada variable esta identificada por un ID unico en el sistema
+* Se pueden adicionar/eliminar variables de un esperimento detenido
+* Los experimentos al activarse notifican los drivers sobre las variables que necesita
+* Los experimentos al desactivarse notifican los drivers sobre las variables que ya no necesitan
+* Los drives paran/arrancan su timer en funcion de las variables que los experimentos necesitan
+* Cada variable tiene un nombre, que tiene que ser unico en el experimento
+
+Alarmas
+-------
+El servidor chequea estados y lanza alarmas
+
+Salva en base de datos
+----------------------
+El servidor salva en una base de datos el valor de las variables seleccionadas, a los intervalos de tiempo seleccionados
+
+
+

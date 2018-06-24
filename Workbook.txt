@@ -1,0 +1,47 @@
+las variables reales deben tener un MinDeltaToReportChange
+
+el ExperimentLogger se conecta al OnStart y OnStop del Experiment, para saber cuando arranca y cuando para.
+- el experimentLogger es activo
+
+BaseDriver puede enumerar las variables
+- Reescribir pruebas de adicionar y quitar variables verificando con el enumerador
+
+*El ticks to sample de las variables no puede ser menor que 1
+
+Provar interaccion en un server:
+- Experimento - Driver, DONE
+- Prueba con 1000 variables, DONE
+- Experimentos - Driver
+- Experimentos - Drivers
+
+El ValueStorage de BaseDriver debe ser privado
+
+Hay que proteger las zonas criticas de todos los componentes
+
+El servidor debe persistir el estado de los experimentos
+
+Mover a pruebas de integracion la comunicacion asíncrona del servidor
+
+
+Alarmas
+-------
+
+*then_bypass_alarm_if_repeated_in_less_time_is_ignored
+
+
+Logging en base de datos
+------------------------
+
+Usuarios/Permisos
+-----------------------
+Cada usuario tiene un UserLevel, numero entero, siendo un numero mayor asociado a mayor nivel de permisos
+
+
+Comunicacion
+-------------
+Alguien debe hacer un cache de valores por sesion
+
+
+---------------- A largo plazo -------------------
+El acceso a experimentos es threadsafe con el servidor detenido
+El acceso a variables es threadsafe con el experimento detenido

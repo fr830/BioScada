@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="BioSCADA.WCFServices.ServerService" CodeBehind="ServerService.svc.cs" %>

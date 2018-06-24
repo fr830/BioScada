@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0962237C-619C-4360-936D-BF66CB155EA4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BioSCADA.UnitTests</RootNamespace>
+    <AssemblyName>BioSCADA.UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core, Version=1.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Moq\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Castle.DynamicProxy2, Version=2.1.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\libs\Moq\Castle.DynamicProxy2.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate, Version=1.2.0.712, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL" />
+    <Reference Include="Moq">
+      <HintPath>..\..\..\libs\Moq\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="NBehave.Spec.Framework">
+      <HintPath>..\..\..\libs\NBehave\NBehave.Spec.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="NBehave.Spec.NUnit">
+      <HintPath>..\..\..\libs\NBehave\NBehave.Spec.NUnit.dll</HintPath>
+    </Reference>
+    <Reference Include="NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Milton\code\src\GestContrat\GestContrat.UnitTest\bin\Debug\NHibernate.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\..\libs\SqLite\1.0.65.0\System.Data.SQLite.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BioSCADA.ServerComponents\ActiveObjectTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\Alarms\AlarmManagerTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\Alarms\SensorTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\DBLogger\DBDeserializerTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\DBLogger\DBLoggerTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\DBLogger\DBUserTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\DBLogger\ExperimentLoggerTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\DBLogger\ExperimentSerializerTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\DBLogger\LenghtSerializerTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\DBLogger\VariableSerializers\BoolVariableSerializerTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\DBLogger\VariableSerializers\DoubleSerializerTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\DBLogger\VariableSerializers\IntegerVariableSerializerTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\Drivers\DriverModbusRTUTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\Drivers\DriverStub.cs" />
+    <Compile Include="BioSCADA.ServerComponents\Drivers\BaseDriverTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\Drivers\FactoryGroupModbusTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\Drivers\ModbusEncoderDecoderTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\Drivers\TestingDriver.cs" />
+    <Compile Include="BioSCADA.ServerComponents\Drivers\VariableStorageStub.cs" />
+    <Compile Include="BioSCADA.ServerComponents\ExperimentTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\InteropTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\ServerTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\Timers\TimerCreatorTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\Timers\TimerStub.cs" />
+    <Compile Include="Specification.cs" />
+    <Compile Include="BioSCADA.ServerComponents\ValueStorageTests.cs" />
+    <Compile Include="BioSCADA.ServerComponents\VariableTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BioSCADA.ServerComponents\BioSCADA.ServerComponents.csproj">
+      <Project>{0F11405E-E453-486C-A606-C87FBF4B71B9}</Project>
+      <Name>BioSCADA.ServerComponents</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
